@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs Communeo Api in a docker container
+
+[Service]
+WorkingDirectory=/home/communeo
+ExecStart=/bin/bash -c 'cd /home/communeo/dev/exec && source ./run-communeo-api.sh'
+ExecStop=/bin/bash -c 'cd /home/communeo/dev/exec && source ./stop-communeo-api.sh'
+
+[Install]
+WantedBy=multi-user.target

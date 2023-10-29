@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs Communeo Postgres instance in a docker container
+
+[Service]
+WorkingDirectory=/home/communeo
+ExecStart=/bin/bash -c 'cd /home/communeo/dev/exec && source ./run-communeo-psql.sh'
+ExecStop=/bin/bash -c 'cd /home/communeo/dev/exec && source ./stop-communeo-psql.sh'
+
+[Install]
+WantedBy=multi-user.target
